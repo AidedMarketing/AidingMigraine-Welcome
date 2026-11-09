@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aiding Migraine — your personal migraine journal</title>
+<meta name="description" content="Aiding Migraine is a personal diary for tracking your migraines — what happened, how it felt, and what patterns show up over time. No account. No noise. Your data stays on your device.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%236b5b7a'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --card: #fffdf9;
+    --text: #2e2a26;
+    --muted: #6d675f;
+    --accent: #6b5b7a;
+    --accent-soft: #ece6ee;
+    --border: #ddd6cc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 40px 20px 64px; }
+  header { margin-bottom: 32px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 16px; font-weight: 650; }
+  .subhead { font-size: 19px; color: var(--muted); margin: 0; }
+  .button {
+    display: inline-block; background: var(--accent); color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 17px;
+    padding: 14px 26px; border-radius: 10px; margin: 8px 0 4px;
+  }
+  .button:hover { background: #5a4c68; }
+  .button-note { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+  .button-note a { color: var(--accent); }
+  section {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin: 24px 0;
+  }
+  h2 { font-size: 21px; margin: 0 0 12px; font-weight: 650; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 10px; }
+  li:last-child { margin-bottom: 0; }
+  ol { margin: 0; padding-left: 20px; }
+  ol li { margin-bottom: 10px; }
+  .note {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 16px 20px; border-radius: 0 10px 10px 0;
+  }
+  .note p { margin: 0; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 40px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 14px; color: var(--muted); text-align: center;
+  }
+  footer a { color: var(--muted); }
+  @media (prefers-reduced-motion: no-preference) {
+    main { animation: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Aiding Migraine</p>
+    <h1>A quiet place to keep track of your migraines.</h1>
+    <p class="subhead">Aiding Migraine is a personal diary for tracking your migraines — what happened, how it felt, and what patterns show up over time. No account. No noise. Your data stays on your device.</p>
+  </header>
+
+  <p>
+    <a class="button" href="https://app.aidingmigraine.com/">Open the beta app &rarr;</a>
+  </p>
+  <p class="button-note">Already testing? <a href="https://app.aidingmigraine.com/help/feedback.html">Share beta feedback</a> or email <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a>.<br>
+  While the app subdomain is being set up, the app is also reachable at <a href="https://aidedmarketing.github.io/AidingMigraine/">aidedmarketing.github.io/AidingMigraine</a>.</p>
+
+  <section>
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Log an episode in seconds.</strong> Start it with one tap, note your pain, and end it when it&rsquo;s over.</li>
+      <li><strong>See your patterns.</strong> Pain, duration, symptoms, triggers, and what came before and after — in one place, over weeks and months.</li>
+      <li><strong>Bring it to your clinician.</strong> Export your history as a PDF, CSV, or JSON file to share at an appointment.</li>
+      <li><strong>Lock it if you want.</strong> Optional on-device encryption with a passphrase you choose. If you forget the passphrase, it can&rsquo;t be recovered — there&rsquo;s no backdoor — so keep an unencrypted backup somewhere safe.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Open the app</strong> — it runs in your browser and installs to your home screen like an app. No download from an app store.</li>
+      <li><strong>iPhone:</strong> open the link in Safari, tap Share, then <strong>Add to Home Screen</strong>.<br>
+      <strong>Android:</strong> open the link in Chrome, tap the menu, then <strong>Install app</strong> / <strong>Add to Home screen</strong>.</li>
+      <li><strong>Log your first episode.</strong> That&rsquo;s it — there&rsquo;s nothing to set up first.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Your privacy</h2>
+    <p>There is no account, no sign-in, and no third-party analytics. Your journal stays on your device by default. Only two optional features send anything anywhere, and only if you turn them on: notifications (to remind you) and weather (to show pressure changes alongside your episodes). If you send feedback, it goes by email to <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a> — only what you choose to include.</p>
+  </section>
+
+  <section class="note" aria-label="A quick note">
+    <h2>A quick note</h2>
+    <p>Aiding Migraine is a personal diary for tracking your migraines — it is not medical advice, and it can&rsquo;t diagnose you or tell you what treatment or medication changes to make. Only your clinician can do that. If something feels sudden, severe, or different from your usual pattern, get urgent care and talk to your doctor.</p>
+  </section>
+
+  <section>
+    <h2>About the beta</h2>
+    <p>Aiding Migraine is in a small closed beta right now. A handful of people are trying it for two weeks and telling us what works, what doesn&rsquo;t, and what&rsquo;s missing.</p>
+    <p>This page is the front door, not an open sign-up: <strong>the beta is invite-only, and the app link is for testers only — please don&rsquo;t share it publicly.</strong> If you were invited, welcome — we&rsquo;re glad you&rsquo;re here. If you weren&rsquo;t, there&rsquo;s nothing to sign up for yet; check back later.</p>
+    <p>Questions or feedback? Email <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>Aiding Migraine — built with care for migraine sufferers.<br>
+    A personal diary, not medical advice. &middot;
+    <a href="https://app.aidingmigraine.com/help/privacy.html">Privacy</a> &middot;
+    <a href="https://app.aidingmigraine.com/help/terms.html">Terms</a> &middot;
+    <a href="https://app.aidingmigraine.com/help/feedback.html">Feedback</a></p>
+  </footer>
+</main>
+</body>
+</html>
