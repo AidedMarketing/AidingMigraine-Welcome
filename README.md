@@ -28,3 +28,8 @@ The disclaimer on the page is verbatim from the app — do not paraphrase it.
 No medical claims anywhere: no "reduce", "prevent", "relieve", "treat", or
 "manage your migraines" language. The app is a personal diary, not medical
 advice.
+
+## Status
+
+- Nov 12, 2026: DNS live. App subdomain live over HTTPS. Apex HTTPS
+  certificate provisioning retriggered with this commit.
