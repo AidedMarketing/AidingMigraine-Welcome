@@ -13,8 +13,10 @@
     --text: #2e2a26;
     --muted: #6d675f;
     --accent: #6b5b7a;
+    --accent-dark: #5a4c68;
     --accent-soft: #ece6ee;
     --border: #ddd6cc;
+    --shadow: 0 1px 3px rgba(46, 42, 38, .06), 0 4px 14px rgba(46, 42, 38, .04);
   }
   * { box-sizing: border-box; }
   body {
@@ -25,38 +27,85 @@
     font-size: 17px;
     line-height: 1.65;
   }
-  main { max-width: 640px; margin: 0 auto; padding: 40px 20px 64px; }
-  header { margin-bottom: 32px; }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #f3eee6 0%, #ece6ee 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 44px 36px 40px;
+    margin-bottom: 28px;
+  }
+  .hero-art {
+    position: absolute; top: -46px; right: -46px;
+    width: 190px; height: 190px; opacity: .5;
+    pointer-events: none;
+  }
   .eyebrow {
     font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); margin: 0 0 12px;
+    color: var(--accent); margin: 0 0 14px; font-weight: 600;
   }
-  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 16px; font-weight: 650; }
-  .subhead { font-size: 19px; color: var(--muted); margin: 0; }
+  h1 { font-size: 36px; line-height: 1.2; margin: 0 0 16px; font-weight: 650; max-width: 30ch; }
+  .subhead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 52ch; }
   .button {
     display: inline-block; background: var(--accent); color: #fff;
     text-decoration: none; font-weight: 600; font-size: 17px;
-    padding: 14px 26px; border-radius: 10px; margin: 8px 0 4px;
+    padding: 14px 28px; border-radius: 10px;
   }
-  .button:hover { background: #5a4c68; }
-  .button-note { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+  .button:hover { background: var(--accent-dark); }
+  .button-note { font-size: 14px; color: var(--muted); margin: 14px 0 0; }
   .button-note a { color: var(--accent); }
+
+  /* Cards and sections */
   section {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 24px; margin: 24px 0;
+    border-radius: 14px; padding: 28px; margin: 22px 0;
+    box-shadow: var(--shadow);
   }
-  h2 { font-size: 21px; margin: 0 0 12px; font-weight: 650; }
-  ul { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 10px; }
-  li:last-child { margin-bottom: 0; }
-  ol { margin: 0; padding-left: 20px; }
-  ol li { margin-bottom: 10px; }
+  h2 { font-size: 21px; margin: 0 0 16px; font-weight: 650; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero { padding: 34px 24px 30px; } }
+  .feature {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .feature .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--accent-soft); margin-bottom: 12px;
+  }
+  .feature h3 { font-size: 17px; margin: 0 0 6px; font-weight: 650; }
+  .feature p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+
+  /* Steps */
+  .steps { display: grid; gap: 14px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .num {
+    flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 650; font-size: 16px;
+    margin-top: 2px;
+  }
+  .step p { margin: 0; }
+
+  .privacy-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .privacy-head .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--accent-soft); flex: 0 0 auto;
+  }
+  .privacy-head h2 { margin: 0; }
+  section p { margin: 0 0 12px; }
+  section p:last-child { margin-bottom: 0; }
+
   .note {
     border-left: 3px solid var(--accent);
     background: var(--accent-soft);
-    padding: 16px 20px; border-radius: 0 10px 10px 0;
+    box-shadow: none;
   }
-  .note p { margin: 0; }
   a { color: var(--accent); }
   footer {
     margin-top: 40px; padding-top: 20px;
@@ -64,46 +113,76 @@
     font-size: 14px; color: var(--muted); text-align: center;
   }
   footer a { color: var(--muted); }
-  @media (prefers-reduced-motion: no-preference) {
-    main { animation: none; }
-  }
 </style>
 </head>
 <body>
 <main>
-  <header>
+  <div class="hero">
+    <svg class="hero-art" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <circle cx="100" cy="100" r="88" fill="none" stroke="#6b5b7a" stroke-opacity=".25" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#6b5b7a" stroke-opacity=".35" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="36" fill="#6b5b7a" fill-opacity=".18"/>
+      <circle cx="100" cy="100" r="14" fill="#6b5b7a" fill-opacity=".3"/>
+    </svg>
     <p class="eyebrow">Aiding Migraine</p>
     <h1>A quiet place to keep track of your migraines.</h1>
     <p class="subhead">Aiding Migraine is a personal diary for tracking your migraines — what happened, how it felt, and what patterns show up over time. No account. No noise. Your data stays on your device.</p>
-  </header>
-
-  <p>
-    <a class="button" href="https://app.aidingmigraine.com/">Open the beta app &rarr;</a>
-  </p>
-  <p class="button-note">Already testing? <a href="https://app.aidingmigraine.com/help/feedback.html">Share beta feedback</a> or email <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a>.</p>
+    <p style="margin:0">
+      <a class="button" href="https://app.aidingmigraine.com/">Open the beta app &rarr;</a>
+    </p>
+    <p class="button-note">Already testing? <a href="https://app.aidingmigraine.com/help/feedback.html">Share beta feedback</a> or email <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a>.</p>
+  </div>
 
   <section>
     <h2>What it does</h2>
-    <ul>
-      <li><strong>Log an episode in seconds.</strong> Start it with one tap, note your pain, and end it when it&rsquo;s over.</li>
-      <li><strong>See your patterns.</strong> Pain, duration, symptoms, triggers, and what came before and after — in one place, over weeks and months.</li>
-      <li><strong>Bring it to your clinician.</strong> Export your history as a PDF, CSV, or JSON file to share at an appointment.</li>
-      <li><strong>Lock it if you want.</strong> Optional on-device encryption with a passphrase you choose. If you forget the passphrase, it can&rsquo;t be recovered — there&rsquo;s no backdoor — so keep an unencrypted backup somewhere safe.</li>
-    </ul>
+    <div class="grid">
+      <div class="feature">
+        <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5b7a" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.2l2.8 1.8"/></svg></span>
+        <h3>Log an episode in seconds</h3>
+        <p>Start it with one tap, note your pain, and end it when it&rsquo;s over.</p>
+      </div>
+      <div class="feature">
+        <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5b7a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 15.5 9 10l3.5 3L18.5 7"/><path d="M15.5 7h3v3"/></svg></span>
+        <h3>See your patterns</h3>
+        <p>Pain, duration, symptoms, triggers, and what came before and after — in one place, over weeks and months.</p>
+      </div>
+      <div class="feature">
+        <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5b7a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7L19 8.5V20a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z"/><path d="M13.5 3.5v5.5H19"/><path d="M12 17.5v-6"/><path d="M9.4 13.6 12 11l2.6 2.6"/></svg></span>
+        <h3>Bring it to your clinician</h3>
+        <p>Export your history as a PDF, CSV, or JSON file to share at an appointment.</p>
+      </div>
+      <div class="feature">
+        <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5b7a" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15.2" r="1.4" fill="#6b5b7a" stroke="none"/></svg></span>
+        <h3>Lock it if you want</h3>
+        <p>Optional on-device encryption with a passphrase you choose. If you forget the passphrase, it can&rsquo;t be recovered — there&rsquo;s no backdoor — so keep an unencrypted backup somewhere safe.</p>
+      </div>
+    </div>
   </section>
 
   <section>
     <h2>How it works</h2>
-    <ol>
-      <li><strong>Open the app</strong> — it runs in your browser and installs to your home screen like an app. No download from an app store.</li>
-      <li><strong>iPhone:</strong> open the link in Safari, tap Share, then <strong>Add to Home Screen</strong>.<br>
-      <strong>Android:</strong> open the link in Chrome, tap the menu, then <strong>Install app</strong> / <strong>Add to Home screen</strong>.</li>
-      <li><strong>Log your first episode.</strong> That&rsquo;s it — there&rsquo;s nothing to set up first.</li>
-    </ol>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">1</span>
+        <p><strong>Open the app</strong> — it runs in your browser and installs to your home screen like an app. No download from an app store.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">2</span>
+        <p><strong>iPhone:</strong> open the link in Safari, tap Share, then <strong>Add to Home Screen</strong>.<br>
+        <strong>Android:</strong> open the link in Chrome, tap the menu, then <strong>Install app</strong> / <strong>Add to Home screen</strong>.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">3</span>
+        <p><strong>Log your first episode.</strong> That&rsquo;s it — there&rsquo;s nothing to set up first.</p>
+      </div>
+    </div>
   </section>
 
   <section>
-    <h2>Your privacy</h2>
+    <div class="privacy-head">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5b7a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 5 6v5c0 4.6 3 7.7 7 9.5 4-1.8 7-4.9 7-9.5V6Z"/><path d="m9.2 11.8 2 2 3.6-3.8"/></svg></span>
+      <h2>Your privacy</h2>
+    </div>
     <p>There is no account, no sign-in, and no third-party analytics. Your journal stays on your device by default. Only two optional features send anything anywhere, and only if you turn them on: notifications (to remind you) and weather (to show pressure changes alongside your episodes). If you send feedback, it goes by email to <a href="mailto:support@aidingmigraine.com">support@aidingmigraine.com</a> — only what you choose to include.</p>
   </section>
 
