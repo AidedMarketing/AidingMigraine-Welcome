@@ -3,15 +3,16 @@
 Welcome page for [Aiding Migraine](https://aidingmigraine.com/) — the closed-beta
 front door for the personal migraine journal.
 
-- Live site (once DNS is set): https://aidingmigraine.com/
+- Live site: https://aidingmigraine.com/
 - The app itself lives at https://app.aidingmigraine.com/
   (PWA repo: [AidedMarketing/AidingMigraine](https://github.com/AidedMarketing/AidingMigraine))
 
 ## What this is
 
-A single static page (`index.html`, inline CSS, no JavaScript, no backend,
-no analytics, no tracking). Calm, low-stimulation, migraine-safe design:
-muted colours, no flashing, no animation, no pop-ups, no autoplay.
+A single static page (`index.html`, inline + linked CSS, one small inline
+script for the comfort controls — tone, brightness, and motion — with a
+working no-JS fallback. No backend, no analytics, no tracking). Calm,
+low-stimulation design: muted colours, no flashing, no pop-ups, no autoplay.
 
 ## Deploy
 
